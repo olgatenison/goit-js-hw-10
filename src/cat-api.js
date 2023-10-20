@@ -81,29 +81,47 @@ export function fetchBreeds() {
 
 // fetchCatByBreed: Эта функция извлекает изображения кошек для конкретной породы на основе предоставленного идентификатора breedId. Она создает URL с использованием идентификатора породы и API-ключа, после чего отправляет GET-запрос. Также происходит проверка, что ответ имеет статус OK (код состояния 200), и возвращаются данные в формате JSON.
 
+// export function fetchCatByBreed(breedId) {
+//   return (
+//     fetch(`${BASE_URL}/images/search?breed_ids=${breedId}&key=${API_KEY}`)
+//       .then(resp => {
+//         //checked if responce is ok
+//         if (!resp.ok) {
+//           throw new Error(resp.statusText);
+//         }
+//         return resp.json();
+//       })
+//       //if all ok create options
+//       .then(data => {
+//         console.log(data[0].breeds);
+//         const oneCatMarkup = data[0]
+//           .map(({ name, description, temperament, url }) => {
+//             return `<div class="cat-img">
+//             <img src="${url}" alt="${name}" width="500" />
+//           </div>
+//           <div class="cat-container">
+//             <h1>${name}</h1>
+//             <p>${description}</p>
+//             <p><b>Temperament:</b> ${temperament}</p>
+//           </div>`;
+//           })
+//           .join('');
+//         elements.select.insertAdjacentHTML('beforeend', oneCatMarkup);
+//       })
+//       //if error
+//       .catch(err => {
+//         console.log(err);
+//       })
+//   );
+// }
+
 export function fetchCatByBreed(breedId) {
-  return (
-    fetch(`${BASE_URL}/images/search?breed_ids=${breedId}&key=${API_KEY}`)
-      .then(resp => {
-        //checked if responce is ok
-        if (!resp.ok) {
-          throw new Error(resp.statusText);
-        }
-        return resp.json();
-      })
-      //if all ok create options
-      .then(data => {
-        console.log(data);
-        const oneCatMarkup = data
-          .map(({ id, name, description, temperament }) => {
-            return `<option value = ${id}>${name}</option>`;
-          })
-          .join('');
-        elements.select.insertAdjacentHTML('beforeend', breedMarkup);
-      })
-      //if error
-      .catch(err => {
-        console.log(err);
-      })
-  );
+  return fetch(
+    `${BASE_URL}/images/search?breed_ids=${breedId}&key=${API_KEY}`
+  ).then(resp => {
+    if (!resp.ok) {
+      throw new Error(resp.statusText);
+    }
+    return resp.json().catch(err => console.log(err));
+  });
 }
