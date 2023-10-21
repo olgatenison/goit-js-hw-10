@@ -32,19 +32,20 @@ function onSelect(evt) {
 }
 
 function showCat(breedId) {
-  //  отримує з першого вибору породу і данні для текстової частини, вставляє в розмітку
+  // Використовує вибрану породу для отримання інформації про породу
   fetchBreeds().then(data => {
-    const description = data[0].description;
-    const temperament = data[0].temperament;
-    const name = data[0].name;
+    // Знаходить інформацію про вибрану породу за ід з усіх
+    const selectedBreed = data.find(breed => breed.id === breedId);
+
+    const description = selectedBreed.description;
+    const temperament = selectedBreed.temperament;
+    const name = selectedBreed.name;
 
     const oneCatMarkupInfo = `
-         <div class="cat-container"><h1>${name}</h1><p>${description}</p><p><b>Temperament:</b> ${temperament}</p></div>`;
+       <div class="cat-container"><h1>${name}</h1><p>${description}</p><p><b>Temperament:</b> ${temperament}</p></div>`;
 
     elements.info.insertAdjacentHTML('beforeend', oneCatMarkupInfo);
   });
-
-  //  отримує з другого вибору по айді картинку і вставляє в розмітку
 
   fetchCatByBreed(breedId)
     .then(data => {
