@@ -57,7 +57,7 @@ function showCat(breedId) {
     })
     .then(catInfo => {
       // забираэмо картинку з другого запиту
-      catData = catInfo[0];
+      const catData = catInfo[0];
 
       const description = selectedBreed.description;
       const temperament = selectedBreed.temperament;
