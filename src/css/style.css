@@ -1,0 +1,42 @@
+/* body {
+  background-image: url('/src/img/7411725.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  height: auto;
+  animation: fadeInImage 1s ease;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.cat-info {
+}
+
+.loader {
+}
+.error {
+}
