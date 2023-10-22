@@ -48,10 +48,11 @@ function onSelect(evt) {
 }
 
 function showCat(breedId) {
+  let selectedBreed;
   fetchBreeds()
     // для отримання інформації про породу і зберігаємо її в selectedBreed
     .then(data => {
-      const selectedBreed = data.find(breed => breed.id === breedId);
+      selectedBreed = data.find(breed => breed.id === breedId);
       //отримуэмо результат з запиту картинки
       return fetchCatByBreed(breedId);
     })
