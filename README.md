@@ -1,99 +1,34 @@
-# Parcel template
+Certainly, here's the final description in English:
 
-Этот проект был создан при помощи Parcel. Для знакомства и настройки
-дополнительных возможностей [обратись к документации](https://parceljs.org/).
+# Cat Search
 
-## Подготовка нового проекта
+**Description:**
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Склонируй этот репозиторий.
-3. Измени имя папки с `parcel-project-template` на имя своего проекта.
-4. Создай новый пустой репозиторий на GitHub.
-5. Открой проект в VSCode, запусти терминал и свяжи проект с GitHub-репозиторием
-   [по инструкции](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url).
-6. Установи зависимости проекта в терминале командой `npm install` .
-7. Запусти режим разработки, выполнив команду `npm start`.
-8. Перейди в браузере по адресу [http://localhost:1234](http://localhost:1234).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+This repository contains the front-end part of an application for searching information about cats based on their breed. The application uses the public The Cat API to fetch data about cats and their breeds.
 
-## Файлы и папки
+**Tools and Technologies:**
 
-- Все паршалы файлов стилей должны лежать в папке `src/sass` и импортироваться в
-  файлы стилей страниц. Например, для `index.html` файл стилей называется
-  `index.scss`.
-- Изображения добавляй в папку `src/images`. Сборщик оптимизирует их, но только
-  при деплое продакшн версии проекта. Все это происходит в облаке, чтобы не
-  нагружать твой компьютер, так как на слабых машинах это может занять много
-  времени.
+- The project utilizes the following technologies:
+  - **HTML**: for creating the structure of the webpage.
+  - **CSS**: for styling the user interface.
+  - **JavaScript (ES6+)**: for server interaction and data handling.
+  - **Axios**: used for making HTTP requests to The Cat API.
+  - **SlimSelect**: a library for creating a stylish breed selection dropdown.
+  - **Notiflix**: for displaying error messages and loading status.
+  - **Postman**: utilized for testing and debugging HTTP requests during the project development.
 
-## Деплой
+**Educational Objectives:**
 
-Для настройки деплоя проекта необходимо выполнить несколько дополнительных шагов
-по настройке твоего репозитория. Зайди во вкладку `Settings` и в подсекции
-`Actions` выбери выбери пункт `General`.
+- The task involved creating the front-end part of an application to interact with The Cat API.
+- HTTP requests were used to obtain data about cat breeds and individual cats within the project.
+- Handling loading states, displaying error messages, and creating a user-friendly interface were implemented.
+- Postman was used for testing and debugging HTTP requests throughout the development process.
 
-![GitHub actions settings](./assets/actions-config-step-1.png)
+**Completion:**
 
-Пролистай страницу до последней секции, в которой убедись что выбраны опции как
-на следующем изображении и нажми `Save`. Без этих настроек у сборки будет
-недостаточно прав для автоматизации процесса деплоя.
+This project was successfully implemented using HTML, CSS, JavaScript, Axios, SlimSelect, and Notiflix. Postman was used for testing and debugging HTTP requests. The repository contains the relevant files and code, which can be used to search for information about cats by their breed.
 
-![GitHub actions settings](./assets/actions-config-step-2.png)
 
-Продакшн версия проекта будет автоматически собираться и деплоиться на GitHub
-Pages, в ветку `gh-pages`, каждый раз когда обновляется ветка `main`. Например,
-после прямого пуша или принятого пул-реквеста. Для этого необходимо в файле
-`package.json` отредактировать поле `homepage` и скрипт `build`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+** Parcel template**
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/",
-"scripts": {
-  "build": "parcel build src/*.html --public-url /your_repo_name/"
-},
-```
-
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
-
-![GitHub Pages settings](./assets/repo-settings.png)
-
-### Статус деплоя
-
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
-
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
-
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
-
-![Deployment status](./assets/status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/parcel-project-template](https://goitacademy.github.io/parcel-project-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` или скрипта `build` в
-файле `package.json`.
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+Note: This project was created using Parcel. For more information and additional features, please refer to the [documentation](https://parceljs.org/).
