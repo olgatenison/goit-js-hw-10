@@ -1,4 +1,4 @@
-Certainly, here's the final description in English:
+
 
 # Cat Search
 
