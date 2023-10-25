@@ -54,7 +54,7 @@ ul {
 .cat-info {
   position: absolute;
   top: 100px;
-  width: 400px;
+  max-width: 380gitpx;
 
   background-color: #fff;
   border-radius: 10px;
