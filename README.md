@@ -44,4 +44,4 @@ to search for information about cats by their breed.
 Note: This project was created using Parcel. For more information and additional
 features, please refer to the [documentation](https://parceljs.org/).
 
-![preview](https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png)
+![preview](https://github.com/olgatenison/goit-js-hw-10/blob/main/src/img/fb.jpg)
